@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulaire</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+  </head>
+  <body>
+  
+    <form action="" method="POST" id="formul">
+        <label for="Civilite" id="Civilite">Civilité : </label>
+        H.<input type="radio" name="Civilite" value="Homme"> F.<input type="radio" name="Civilite" value="Femme"><br>
+        <label for="Nom">Nom : </label>    
+        <input type="text" name="Nom"> <br>
+        <label for="Prenom">Prénom : </label>
+        <input type="text" name="Prenom"> <br>
+        <label for="Numsecu" id="Numsecu">Numéro Sécu : </label>
+        <input type="number" name="Numsecu"><br>
+        <label for="Mail" id="Mail">Mail : </label>
+        <input type="email" name="Mail" value="" placeholder="utilisateur@domaine.fr " ><br>
+        <label for="Numtel">Numéro téléphone : </label>
+        <SELECT NAME="num">
+        <OPTION VALUE="1">+33<input type="number" name="Numtel" value="" id="Numtel"><br> <br>
+        <label for="Adresse" id="Adresse">Adresse :</label><br>
+        <label for="Adresse" id="Adresse">Numéro : </label><br>
+        <input type="number" name="Numero" value="" id="Adresse">
+        <label for="Adresse" id="Adresse">Rue : </label>
+        <input type="text" name="Rue" id="Adresse"><br>
+        <label for="Adresse" id="Adresse">Code postal : </label>
+        <input type="text" name="Codepostal" id="Adresse">
+        <label for="Adresse" id="Adresse">Ville : </label>
+        <input type="text" name="Ville" id="Adresse">
+        <br>
+        <label for="listpays">Pays :</label>
+        <select name="listpays">
+        <option value="1">France</option>
+        </select> <br><br>
+
+        <label for="Iban">IBAN : </label>
+        <input type="text" name="Iban" value="" id="Iban" ><br>
+
+        <label for="Datenaissance">Date de naissance : </label>
+        <input type="date" name="Datenaissance" value="" id="Datenaissance" ><br>
+
+        <label for="list">Département : </label>
+        <SELECT NAME="list">
+        <OPTION VALUE="1">Moselle
+            <OPTION VALUE="2">Lorraine
+            <OPTION VALUE="3">Alsace
+        </SELECT> <br> <br>
+        <input type="submit">
+    </form>
+
+    <script>
+    $(function(){
+        $("#formul").validate({
+            rules: {
+                Nom: {
+                    required: true,
+                    minlength: 2,
+                    maxlength:20
+                },
+                Prenom: {
+                    required: true,
+                    minlength: 2,
+                    maxlength:20
+                },
+                Civilite: {
+                    required: true
+                },
+                Numsecu: {
+                    required: true,
+                    maxlength:13
+                },
+                Mail: {
+                    required: true
+                },
+                Numtel: {
+                    required: true,
+                    maxlength:9
+                },
+                Numero: {
+                    required: true,
+                    maxlength:2
+                },
+                Rue: {
+                    required: true
+                },
+                Codepostal: {
+                    required: true,
+                    maxlength:5
+                },
+                Ville: {
+                    required: true
+                },
+                Iban: {
+                    required: true
+                },
+                Datenaissance: {
+                    required: true
+                }
+            },
+            messages: {
+                Nom: {
+                    required: 'Veuillez saisir un nom.',
+                    minlength: 'Votre nom doit faire plus de 2 caractères.',
+                    maxlength: 'Votre nom ne doit pas dépasser 20 caractères.'
+                },
+                Prenom: {
+                    required: 'Veuillez saisir un prénom.',
+                    minlength: 'Votre prénom doit faire plus de 2 caractères.',
+                    maxlength: 'Votre prénom ne doit pas dépasser 20 caractères.'
+                },
+                Civilite: {
+                    required: 'Veuillez choisir une civilité.'
+                },
+                Numsecu: {
+                    required : 'Veuillez saisir votre numéro de sécu.',
+                    maxlength : 'Votre numéro de sécu ne peux pas dépasser 13 caractères.'
+                },
+                Mail: {
+                    required : 'Veuillez saisir une adresse mail',
+                    email : 'Veuillez respecter la forme : utilisateur@domaine.fr'
+                },
+                Numtel: {
+                    required : 'Veuillez saisir un numéro de téléphone.',
+                    maxlength : 'Veuillez saisir un numéro exact.'
+                },
+                Numero: {
+                    required: 'Veuillez saisir un numéro de rue.',
+                    maxlength: 'Veuillez saisir un numéro valide.'
+                },
+                Rue: {
+                    required: 'Veuillez saisir un nom de rue.'
+                },
+                Codepostal: {
+                    required: 'Veuillez saisir votre code postale.',
+                    maxlength: 'Veuillez saisir un code postale valide.'
+                },
+                Ville: {
+                    required: 'Veuillez saisir votre ville.'
+                },
+                Iban: {
+                    required: 'Veuillez saisir votre Iban.'
+                },
+                Datenaissance: {
+                    required: 'Veuillez saisir votre date de naissance.'
+                }
+            }
+        });
+    });
+    </script>
+
+
+
+  </body>
+</html>
